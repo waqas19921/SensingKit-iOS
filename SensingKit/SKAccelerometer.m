@@ -91,7 +91,7 @@
         return NO;
     }
     
-    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
+    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue]
                                              withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
                                                  
                                                  if (error) {

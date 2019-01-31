@@ -89,7 +89,7 @@
         return NO;
     }
     
-    [self.motionManager startMagnetometerUpdatesToQueue:[NSOperationQueue currentQueue]
+    [self.motionManager startMagnetometerUpdatesToQueue:[NSOperationQueue mainQueue]
                                             withHandler:^(CMMagnetometerData *magnetometerData, NSError *error) {
                                                 
                                                 if (error) {

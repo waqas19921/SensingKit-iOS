@@ -89,7 +89,7 @@
         return NO;
     }
     
-    [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
+    [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue]
                                             withHandler:^(CMDeviceMotion *motion, NSError *error) {
                                                 
                                                 if (error) {

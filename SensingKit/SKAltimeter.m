@@ -90,7 +90,7 @@
         return NO;
     }
     
-    [self.altemeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue currentQueue]
+    [self.altemeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue mainQueue]
                                             withHandler:^(CMAltitudeData *altitudeData, NSError *error) {
                                                 
                                                 if (error) {

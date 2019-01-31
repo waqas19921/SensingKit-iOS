@@ -89,7 +89,7 @@
         return NO;
     }
     
-    [self.motionManager startGyroUpdatesToQueue:[NSOperationQueue currentQueue]
+    [self.motionManager startGyroUpdatesToQueue:[NSOperationQueue mainQueue]
                                     withHandler:^(CMGyroData *gyroData, NSError *error) {
                                         
                                         if (error) {
