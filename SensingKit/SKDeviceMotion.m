@@ -57,7 +57,7 @@
     SKDeviceMotionConfiguration *deviceMotionConfiguration = (SKDeviceMotionConfiguration *)configuration;
     
     // Make the required updates on the sensor
-    self.motionManager.deviceMotionUpdateInterval = 1.0 / deviceMotionConfiguration.sampleRate;  // Convert Hz into interval
+    self.motionManager.deviceMotionUpdateInterval = 1.0 / [deviceMotionConfiguration.sampleRate doubleValue];  // Convert Hz into interval
 }
 
 

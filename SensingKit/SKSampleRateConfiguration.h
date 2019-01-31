@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The Sample Rate of the sensor in Hz.
  */
-@property (nonatomic) NSUInteger sampleRate;
+@property (nonatomic) NSNumber* sampleRate;
 
 @end
 
