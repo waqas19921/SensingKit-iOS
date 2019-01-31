@@ -31,7 +31,7 @@
     if (self = [super init])
     {
         // Set default values
-        _sampleRate = 100; // Hz
+        _sampleRate = [NSNumber numberWithInt:100]; // Hz
     }
     return self;
 }
