@@ -41,14 +41,16 @@
 {
     if (self = [super init])
     {
-        self.locationManager = [[CLLocationManager alloc] init];
-        
-        #if !TARGET_IPHONE_SIMULATOR
-        self.locationManager.pausesLocationUpdatesAutomatically = NO;
-        #endif
-        
-        self.locationManager.delegate = self;
-        self.configuration = configuration;
+        dispatch_sync(dispatch_get_main_queue(),^ {
+            self.locationManager = [[CLLocationManager alloc] init];
+
+            #if !TARGET_IPHONE_SIMULATOR
+            self.locationManager.pausesLocationUpdatesAutomatically = NO;
+            #endif
+
+            self.locationManager.delegate = self;
+            self.configuration = configuration;
+        });
     }
     return self;
 }
@@ -167,15 +169,18 @@
         }
         return NO;
     }
-    
-    [self.locationManager startUpdatingLocation];
+    dispatch_sync(dispatch_get_main_queue(),^ {
+        [self.locationManager startUpdatingLocation];
+    });
     
     return YES;
 }
 
 - (BOOL)stopSensing:(NSError **)error
 {
-    [self.locationManager stopUpdatingLocation];
+    dispatch_sync(dispatch_get_main_queue(),^ {
+        [self.locationManager stopUpdatingLocation];
+    });
     
     return [super stopSensing:error];
 }
